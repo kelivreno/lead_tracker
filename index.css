@@ -11,7 +11,7 @@ input {
     padding-right: 10px;
     box-sizing: border-box;
     border-color: #5f9341;
-    border: 0.5px thin #5f9341;
+    border: 1px solid #5f9341;
 }
 
 button {
