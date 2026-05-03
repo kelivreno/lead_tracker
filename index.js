@@ -9,13 +9,15 @@ inputBtn.addEventListener("click", function() {
     console.log(myLeads)
 })
 
+let listItems = ""
+
+// we prepare the listItems and afterwards, we render it so that the page doesn't 
+// update every time there is a new link
+
 for (let i = 0; i < myLeads.length; i++) {
-    // ulEl.innerHTML += "<li>" + myLeads[i]  + "</li>"
-    // create element
-    const li = document.createElement("li")
-    // set text content
-    li.textContent = myLeads[i]
-    // append to ulEl
-    ulEl.append(li)
+    listItems += "<li>" + myLeads[i]  + "</li>"
 }
 
+
+
+ulEl.innerHTML = listItems
