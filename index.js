@@ -8,6 +8,7 @@ inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     ulEl.innerHTML += "<li>" + inputEl.value + "</li>"
     inputEl.value = "" //clear the input field
+    renderLeads()
     // console.log(myLeads)
     // renderLeads()
 })
