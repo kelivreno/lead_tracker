@@ -24,7 +24,7 @@ function renderLeads() {
                 </a>
             </li>
         `
-        // ${myLeads[i]} to add variables in the call
+        // ${myLeads[i]} to add variables in the call and you need to use `` instead of "" or ''
     }
     ulEl.innerHTML = listItems  
     // we prepare the listItems and afterwards, we render it so that the page doesn't 
