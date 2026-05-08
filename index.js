@@ -13,6 +13,9 @@ inputBtn.addEventListener("click", function() {
     // renderLeads()
 })
 
+localStorage.setItem("myLeads", "www.example.com")
+// -||-.setItem(key, value)
+
 function renderLeads() {
     let listItems = ""
     for (let i = 0; i < myLeads.length; i++) {
