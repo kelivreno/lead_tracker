@@ -14,6 +14,9 @@ inputBtn.addEventListener("click", function() {
 })
 
 localStorage.setItem("myLeads", "www.example.com")
+let localStored = localStorage.getItem("myLeads")
+console.log(localStored)
+localStorage.clear()
 // -||-.setItem(key, value)
 
 function renderLeads() {
