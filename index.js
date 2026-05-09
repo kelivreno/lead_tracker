@@ -1,4 +1,7 @@
 let myLeads = []
+
+// myLeads = JSON.stringify(myLeads) // we stringiy the array, so that the localstorage can read it
+// otherwise, to convert a string to an array, use JSON.parse()
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
@@ -6,17 +9,21 @@ const ulEl = document.getElementById("ul-el")
 inputBtn.addEventListener("click", function() {
     // newInput = inputEl.value
     myLeads.push(inputEl.value)
-    ulEl.innerHTML += "<li>" + inputEl.value + "</li>"
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    // myLeads = JSON.stringify(myLeads)
     inputEl.value = "" //clear the input field
+    
     renderLeads()
+
+    console.log(localStorage.getItem("myLeads"))
     // console.log(myLeads)
     // renderLeads()
 })
 
-localStorage.setItem("myLeads", "www.example.com")
-let localStored = localStorage.getItem("myLeads")
-console.log(localStored)
-localStorage.clear()
+// localStorage.setItem("myLeads", "www.example.com")
+// let localStored = localStorage.getItem("myLeads")
+// console.log(localStored)
+// localStorage.clear()
 // -||-.setItem(key, value)
 
 function renderLeads() {
