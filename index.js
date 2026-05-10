@@ -18,12 +18,9 @@ const tabs = [
     {url: "https://www.linkedin.com/in/kelangithakim/"}
 ]
 
-function arrLink(arr) {
-    let kelLink = arr[0].url
-    console.log(kelLink)
-}
-
-tabBtn.addEventListener("click", arrLink(tabs))
+tabBtn.addEventListener("click", function() {
+    console.log(tabs[0].url)
+})
 
 function render(leads) {
     let listItems = ""
