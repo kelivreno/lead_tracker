@@ -10,13 +10,42 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 if (leadsFromLocalStorage !== null) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    renderLeads(myLeads)
+}
+
+function renderLeads(leads) {
+    let listItems = ""
+    for (let i = 0; i < leads.length; i++) {
+        // Wrap the lead in an anchor tag (<a>) inside the <li>
+        // Can you make the link open in a new tab?
+        listItems += `
+            <li>
+                <a target='_blank' href='${leads[i]}'> 
+                    ${leads[i]} 
+                </a>
+            </li>
+        `
+        // ${myLeads[i]} to add variables in the call and you need to use `` instead of "" or ''
+    }
+    ulEl.innerHTML = listItems  
+    // we prepare the listItems and afterwards, we render it so that the page doesn't 
+    // update every time there is a new link
+    // Alternative solution:
+    // let listItem = "<li>" + inputEl.value + "</li>"
+    // ulEl.innerHTML += listItem
+
+    // for (let i = 0; i < myLeads.length; i++) {
+    //     listItems += "<li>" + myLeads[i]  + "</li>"
+    //     // console.log(listItems)
+    // }
+    // let listItem = "<li>" + inputEl.value + "</li>"
+    // ulEl.innerHTML = listItem
 }
 
 deleteBtn.addEventListener("dblclick", function(){
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    renderLeads(myLeads)
 })
 
 inputBtn.addEventListener("click", function() {
@@ -39,31 +68,4 @@ inputBtn.addEventListener("click", function() {
 // localStorage.clear()
 // -||-.setItem(key, value)
 
-function renderLeads() {
-    let listItems = ""
-    for (let i = 0; i < myLeads.length; i++) {
-        // Wrap the lead in an anchor tag (<a>) inside the <li>
-        // Can you make the link open in a new tab?
-        listItems += `
-            <li>
-                <a target='_blank' href='${myLeads[i]}'> 
-                    ${myLeads[i]} 
-                </a>
-            </li>
-        `
-        // ${myLeads[i]} to add variables in the call and you need to use `` instead of "" or ''
-    }
-    ulEl.innerHTML = listItems  
-    // we prepare the listItems and afterwards, we render it so that the page doesn't 
-    // update every time there is a new link
-    // Alternative solution:
-    // let listItem = "<li>" + inputEl.value + "</li>"
-    // ulEl.innerHTML += listItem
 
-    // for (let i = 0; i < myLeads.length; i++) {
-    //     listItems += "<li>" + myLeads[i]  + "</li>"
-    //     // console.log(listItems)
-    // }
-    // let listItem = "<li>" + inputEl.value + "</li>"
-    // ulEl.innerHTML = listItem
-}
