@@ -6,12 +6,24 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
+const tabBtn = document.getElementById("tab-btn")
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 if (leadsFromLocalStorage !== null) {
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+
+const tabs = [
+    {url: "https://www.linkedin.com/in/kelangithakim/"}
+]
+
+function arrLink(arr) {
+    let kelLink = arr[0].url
+    console.log(kelLink)
+}
+
+tabBtn.addEventListener("click", arrLink(tabs))
 
 function render(leads) {
     let listItems = ""
