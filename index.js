@@ -14,21 +14,16 @@ if (leadsFromLocalStorage !== null) {
     render(myLeads)
 }
 
-const tabs = [
-    {url: "https://www.linkedin.com/in/kelangithakim/"}
-]
-
 tabBtn.addEventListener("click", function(tabs) {
     // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     // })
     chrome.tabs.query({active: true, currentWindow: true}, function(){
         console.log(tabs)
+        // Save the url instead of logging it out
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
+        render(myLeads)
     })
-
-    // Save the url instead of logging it out
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    render(myLeads)
 })
 
 function render(leads) {
