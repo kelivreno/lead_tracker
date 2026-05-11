@@ -6,3 +6,143 @@ npm start
 ```
 
 Head over to https://vitejs.dev/ to learn more about configuring vite
+
+## Things I learned: 
+
+## Let and Const:
+Const is not re-assignedable, otherwise if you would like to reassign a value in the process, it should be a let. 
+
+Example use case: 
+```js
+
+// If possible, use const. If not, use let.
+
+// Which variables below should be changed from let to const?
+
+// The customer wants to order some stuff. Here are the details:
+const basePrice = 520
+const discount = 120
+let shippingCost = 12
+let shippingTime = "5-12 days"
+
+// Whops! Turns out the shipping will be a bit more complex
+shippingCost = 15
+shippingTime = "7-14 days"
+
+// Calculating the full price
+let fullPrice = basePrice - discount + shippingCost
+
+// Finally, notifying the customer
+console.log("Total cost: " + fullPrice + ". It will arrive in " + shippingTime)
+
+
+```
+
+## innerHTML:
+You can change properties of the HTML.
+
+```js
+const container = document.getElementById("container")
+
+container.innerHTML = "<button onclick='buy()'>Buy!</button>"
+```
+
+## createElement() and append():
+
+```js
+for (let i = 0; i < myLeads.length; i++) {
+    // ulEl.innerHTML += "<li>" + myLeads[i]  + "</li>"
+    // create element
+    const li = document.createElement("li")
+    // set text content
+    li.textContent = myLeads[i]
+    // append to ulEl
+    ulEl.append(li)
+}
+
+```
+
+## Template literal:
+Use `` instead of "" or '', the reason to use this is to call variables using `${variable}` within a given code
+
+Example:
+```js
+const email = `Hey ${recipient}! How is it going? Cheers Per`
+```
+
+## Convert string into numbers using Number(): 
+
+```js
+const numOneVal = Number(numOneInput.value); 
+```
+
+## Local storage:
+```js
+localStorage.setItem("myLeads", "www.example.com")
+let localStored = localStorage.getItem("myLeads")
+console.log(localStored)
+localStorage.clear()
+// -||-.setItem(key, value)
+```
+
+### Converting array in local storage into string and vice-versa: 
+```js
+JSON.stringify() //array -> string
+JSON.parse() // string to array
+```
+
+## Truthy and faulsy values:
+
+Just remember these **Faulsy** numbers, other than these are truthy:
+
+```js
+
+// false
+// 0
+// ""
+// null -> how you as a developer signalize emptiness
+// undefined -> how JavaScript signalizes emptiness
+// NaN
+// -
+
+```
+
+## Adding a parameter:
+So that the function is dynamic
+```js
+const welcomeEl = document.getElementById("welcome-el")
+
+// Give the function a parameter, greeting, that replaces "Welcome back"
+function greetUser(greeting) {
+    welcomeEl.textContent = greeting+ ", Per Harald Borgen 👋"    
+}
+
+greetUser("Sup")
+```
+
+### Using multiple parameters?
+```js
+const welcomeEl = document.getElementById("welcome-el")
+
+function greetUser(greeting, name) {
+    welcomeEl.textContent = greeting + ", " + name + " 👋"    
+}
+
+greetUser("Howdy", "James")
+```
+
+### Arguments vs Parameter:
+Parameter = the empty label
+Argument = the real value you give it
+
+```js
+			//parameters
+function add(num1, num2) {
+    return num1 + num2
+}
+
+	//arguments
+add(3, 4)
+```
+
+Resources: [TypeAlias](https://typealias.com/guides/parameters-arguments/)
