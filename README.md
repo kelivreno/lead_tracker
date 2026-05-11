@@ -146,3 +146,7 @@ add(3, 4)
 ```
 
 Resources: [TypeAlias](https://typealias.com/guides/parameters-arguments/)
+
+## Objects in arrays: 
+
+For example, `tabs[0].url` is how you access a key for a specific element in the array.
