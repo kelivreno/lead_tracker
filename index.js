@@ -14,11 +14,10 @@ if (leadsFromLocalStorage !== null) {
     render(myLeads)
 }
 
-tabBtn.addEventListener("click", function(tabs) {
+tabBtn.addEventListener("click", function() {
     // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     // })
-    chrome.tabs.query({active: true, currentWindow: true}, function(){
-        console.log(tabs)
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         // Save the url instead of logging it out
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads", JSON.stringify(myLeads) )
