@@ -1,6 +1,9 @@
+// Import the functions needed from the firebase-app.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js"
-
+// Web App's firebase configuration
 const firebaseConfig = {}
+// Initalize Firebase
+const app = initializeApp(firebaseConfig);
 
 let myLeads = []
 // myLeads = JSON.stringify(myLeads) // we stringiy the array, so that the localstorage can read it
