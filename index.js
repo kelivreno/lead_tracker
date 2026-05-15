@@ -1,8 +1,9 @@
 // Import the functions needed from the firebase-app.js
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js"
 // Web App's firebase configuration
 const firebaseConfig = {
-    databaseURL: "https://leads-tracker-3ed81-default-rtdb.firebaseio.com/"
+    databaseURL: process.env.DATABASE_URL
 }
 // Initalize Firebase
 const app = initializeApp(firebaseConfig);
@@ -89,5 +90,5 @@ inputBtn.addEventListener("click", function() {
 // localStorage.clear()
 // -||-.setItem(key, value)
 
-console.log(app)
+console.log(database)
 
