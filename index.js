@@ -1,9 +1,12 @@
 // Import the functions needed from the firebase-app.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js"
 // Web App's firebase configuration
-const firebaseConfig = {}
+const firebaseConfig = {
+    databaseURL: "https://leads-tracker-3ed81-default-rtdb.firebaseio.com/"
+}
 // Initalize Firebase
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app)
 
 let myLeads = []
 // myLeads = JSON.stringify(myLeads) // we stringiy the array, so that the localstorage can read it
@@ -86,4 +89,5 @@ inputBtn.addEventListener("click", function() {
 // localStorage.clear()
 // -||-.setItem(key, value)
 
+console.log(app)
 
