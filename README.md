@@ -277,3 +277,18 @@ deleteAllButtonEl.addEventListener("dblclick", function() {
 })
 
 ```
+
+## Setting the viewport
+
+Add this just below the `<title>` in the head section: 
+
+```js
+<head>
+    <title>Lead Tracker App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+```
+
+## Adding a favicon
+Just make sure it's a *square* image and that it's a *PNG* format
