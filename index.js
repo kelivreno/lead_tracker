@@ -3,7 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebas
 import { getDatabase,
          ref,
          push,
-         onValue
+         onValue,
+         remove
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 // Web App's firebase configuration
 const firebaseConfig = {
@@ -55,7 +56,8 @@ function render(leads) {
 }
 
 deleteBtn.addEventListener("dblclick", function(){
-    // localStorage.clear()
+    remove(referenceInDB)
+    ulEl.innerHTML = ""
 })
 
 inputBtn.addEventListener("click", function() {
@@ -73,9 +75,12 @@ inputBtn.addEventListener("click", function() {
 })
 
 onValue(referenceInDB,function(snapshot){
-    const snapshotValues = snapshot.val()
-    const leads = Object.values(snapshotValues)
-    render(leads)
+    const snapshotExists = snapshot.exists()
+    if (snapshotExists){
+        const snapshotValues = snapshot.val()
+        const leads = Object.values(snapshotValues)
+        render(leads)
+    }
 })
 
 // localStorage.setItem("myLeads", "www.example.com")
