@@ -293,3 +293,13 @@ Add this just below the `<title>` in the head section:
 ## Adding a favicon
 1. Just make sure it's a *square* image and that it's a *PNG* format
 2. Go to [favicon.io](https://favicon.io/)
+3. Donwload the files and then it will provide how to code it into your `<head>` tag. 
+Ex: ```js
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="index.css">
+</head>
+```
