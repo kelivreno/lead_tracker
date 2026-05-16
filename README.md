@@ -237,3 +237,11 @@ submitButton.addEventListener("click", function() {
 })
 
 ```
+
+## To fetch a value from Firebase: 
+
+```js
+onValue(referenceInDB, function(snapshot) {
+    console.log(snapshot)
+})
+```
