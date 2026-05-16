@@ -73,7 +73,9 @@ inputBtn.addEventListener("click", function() {
 })
 
 onValue(referenceInDB,function(snapshot){
-    console.log(snapshot.val()) 
+    const snapshotValues = snapshot.val()
+    const leads = Object.values(snapshotValues)
+    render(leads)
 })
 
 // localStorage.setItem("myLeads", "www.example.com")
