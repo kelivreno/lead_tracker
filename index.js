@@ -61,7 +61,7 @@ deleteBtn.addEventListener("dblclick", function(){
 
 inputBtn.addEventListener("click", function() {
     // newInput = inputEl.value
-    console.log(inputEl.value)
+    push(referenceInDB,inputEl.value)
     
     // myLeads = JSON.stringify(myLeads)
     inputEl.value = "" //clear the input field
