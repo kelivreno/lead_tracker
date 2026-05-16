@@ -2,7 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
 import { getDatabase,
          ref,
-         push
+         push,
+         onValue
 } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 // Web App's firebase configuration
 const firebaseConfig = {
@@ -23,8 +24,6 @@ const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
-
-
 
 function render(leads) {
     let listItems = ""
@@ -71,6 +70,10 @@ inputBtn.addEventListener("click", function() {
     // console.log(localStorage.getItem("myLeads"))
     // console.log(myLeads)
     // renderLeads()
+})
+
+onValue(referenceInDB,function(snapshot){
+    console.log(snapshot)
 })
 
 // localStorage.setItem("myLeads", "www.example.com")
