@@ -245,3 +245,14 @@ onValue(referenceInDB, function(snapshot) {
     console.log(snapshot)
 })
 ```
+
+## Turn objects into arrays: 
+```js
+const loginCredentials = {
+    "rafidhoda": "BestPassword123",
+    "shahrukhkhan": "InBigCitiesSmallThingsHappen",
+    "jackblack": "ThisIsNotTheGreatestPasswordInTheWorld"
+}
+
+console.log(Object.values(loginCredentials))
+```
