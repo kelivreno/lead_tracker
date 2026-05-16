@@ -1,6 +1,9 @@
 // Import the functions needed from the firebase-app.js
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
+import { getDatabase,
+         ref,
+         push
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 // Web App's firebase configuration
 const firebaseConfig = {
     databaseURL: import.meta.env.VITE_DATABASE_URL
@@ -8,6 +11,7 @@ const firebaseConfig = {
 // Initalize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
+const referenceInDB = ref(database, "leads")
 
 // console.log(firebaseConfig.databaseURL)
 
