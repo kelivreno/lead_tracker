@@ -256,3 +256,24 @@ const loginCredentials = {
 
 console.log(Object.values(loginCredentials))
 ```
+
+## Deleting all data using remove:
+```js
+onValue(referenceInDB, function(snapshot) {
+    const snapshotDoesExist = snapshot.exists()
+    if (snapshotDoesExist) { // if snapshot exist, then and only
+    // then you can run the code below, we need this code because
+    // if there's nothing on the list, the delete all button will have 
+    // an error
+        const snapshotValues = snapshot.val()
+        const chores = Object.values(snapshotValues)
+        render(chores)
+    } 
+})
+
+deleteAllButtonEl.addEventListener("dblclick", function() {
+    remove(referenceInDB)
+    ulEl.innerHTML = ""
+})
+
+```
