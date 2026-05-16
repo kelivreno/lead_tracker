@@ -11,7 +11,7 @@ const database = getDatabase(app)
 
 // console.log(firebaseConfig.databaseURL)
 
-let myLeads = []
+// let myLeads = []
 // myLeads = JSON.stringify(myLeads) // we stringiy the array, so that the localstorage can read it
 // otherwise, to convert a string to an array, use JSON.parse()
 const inputEl = document.getElementById("input-el")
@@ -53,18 +53,16 @@ function render(leads) {
 
 deleteBtn.addEventListener("dblclick", function(){
     // localStorage.clear()
-    myLeads = []
-    render(myLeads)
 })
 
 inputBtn.addEventListener("click", function() {
     // newInput = inputEl.value
-    myLeads.push(inputEl.value)
+    console.log(inputEl.value)
     
     // myLeads = JSON.stringify(myLeads)
     inputEl.value = "" //clear the input field
     
-    render(myLeads)
+
 
     // console.log(localStorage.getItem("myLeads"))
     // console.log(myLeads)
