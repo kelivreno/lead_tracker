@@ -3,13 +3,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebas
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
 // Web App's firebase configuration
 const firebaseConfig = {
-    databaseURL: process.env.DATABASE_URL
+    databaseURL: import.meta.env.VITE_DATABASE_URL
 }
 // Initalize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
 
-console.log(firebaseConfig.databaseURL)
+// console.log(firebaseConfig.databaseURL)
 
 let myLeads = []
 // myLeads = JSON.stringify(myLeads) // we stringiy the array, so that the localstorage can read it
