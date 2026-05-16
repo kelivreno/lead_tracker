@@ -18,24 +18,9 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
-const tabBtn = document.getElementById("tab-btn")
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
-if (leadsFromLocalStorage !== null) {
-    myLeads = leadsFromLocalStorage
-    render(myLeads)
-}
 
-tabBtn.addEventListener("click", function() {
-    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    // })
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        // Save the url instead of logging it out
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-        render(myLeads)
-    })
-})
 
 function render(leads) {
     let listItems = ""
@@ -67,7 +52,7 @@ function render(leads) {
 }
 
 deleteBtn.addEventListener("dblclick", function(){
-    localStorage.clear()
+    // localStorage.clear()
     myLeads = []
     render(myLeads)
 })
@@ -75,13 +60,13 @@ deleteBtn.addEventListener("dblclick", function(){
 inputBtn.addEventListener("click", function() {
     // newInput = inputEl.value
     myLeads.push(inputEl.value)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    
     // myLeads = JSON.stringify(myLeads)
     inputEl.value = "" //clear the input field
     
     render(myLeads)
 
-    console.log(localStorage.getItem("myLeads"))
+    // console.log(localStorage.getItem("myLeads"))
     // console.log(myLeads)
     // renderLeads()
 })
