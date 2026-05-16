@@ -73,7 +73,7 @@ inputBtn.addEventListener("click", function() {
 })
 
 onValue(referenceInDB,function(snapshot){
-    console.log(snapshot)
+    console.log(snapshot.val()) 
 })
 
 // localStorage.setItem("myLeads", "www.example.com")
