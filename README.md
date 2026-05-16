@@ -291,4 +291,5 @@ Add this just below the `<title>` in the head section:
 ```
 
 ## Adding a favicon
-Just make sure it's a *square* image and that it's a *PNG* format
+1. Just make sure it's a *square* image and that it's a *PNG* format
+2. Go to [favicon.io](https://favicon.io/)
