@@ -1,6 +1,6 @@
 // Import the functions needed from the firebase-app.js
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js"
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js"
 // Web App's firebase configuration
 const firebaseConfig = {
     databaseURL: process.env.DATABASE_URL
@@ -8,6 +8,8 @@ const firebaseConfig = {
 // Initalize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app)
+
+console.log(firebaseConfig.databaseURL)
 
 let myLeads = []
 // myLeads = JSON.stringify(myLeads) // we stringiy the array, so that the localstorage can read it
@@ -90,5 +92,5 @@ inputBtn.addEventListener("click", function() {
 // localStorage.clear()
 // -||-.setItem(key, value)
 
-console.log(database)
+
 
