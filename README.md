@@ -294,7 +294,8 @@ Add this just below the `<title>` in the head section:
 1. Just make sure it's a *square* image and that it's a *PNG* format
 2. Go to [favicon.io](https://favicon.io/)
 3. Donwload the files and then it will provide how to code it into your `<head>` tag. 
-Ex: ```js
+Ex: 
+```js
 <head>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -303,3 +304,17 @@ Ex: ```js
     <link rel="stylesheet" href="index.css">
 </head>
 ```
+
+## For mobile app:
+- Android: Add shortcut
+- Apple: Add to Home Page
+
+## Recap for Firebase:
+- import
+- Firebase: initializeApp()
+- Firebase: getDatabase()
+- Firebase: reference, push, onValue, snapshot, snapshot.exists(), remove
+- Firebase: Object -> Array
+- Setting to viewport
+- Favicon
+- Web Application Manifest
